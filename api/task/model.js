@@ -7,7 +7,7 @@ const db = require('../../data/dbConfig')
 
 //getTasks access Function
 function getTasks() {
-    return Promise.resolve('These are awesome Tasks')
+    return db('tasks');
 }
 
 

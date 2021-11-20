@@ -7,7 +7,7 @@ const db = require('../../data/dbConfig')
 
 //getResources access Function
 function getResources() {
-    return Promise.resolve('These are awesome Resources')
+    return db('resources');
 }
 
 

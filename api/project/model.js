@@ -7,7 +7,7 @@ const db = require('../../data/dbConfig')
 
 //getProjects access Function
 function getProjects() {
-    return Promise.resolve('awesome projects')
+    return db('projects');
 }
 
 
