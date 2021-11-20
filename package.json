@@ -8,6 +8,11 @@
     "rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
     "resetdb": "npm run rollback && npm run migrate && npm run seed",
+    "cleanup": "knex seed:run --specific=01-cleanup.js",
+    "tabletwo": "knex seed:run --specific=02-make-projects.js",
+    "tablethree": "knex seed:run --specific=03-make-resources.js",
+    "tablefour": "knex seed:run --specific=04-make-tasks.js",
+    "tablefive": "knex seed:run --specific=05-make-project_resources.js",
     "test": "cross-env NODE_ENV=testing jest --verbose --runInBand --silent"
   },
   "repository": {

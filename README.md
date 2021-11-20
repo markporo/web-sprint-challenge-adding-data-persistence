@@ -21,13 +21,13 @@ In this project you will be given a set of requirements and must design a databa
 
 ### Files to Complete
 
-1. `package.json` --- check
-2. `index.js` --- check
-3. `api/server.js` ---check
+1. `package.json` --- done
+2. `index.js` --- done
+3. `api/server.js` ---done
 4. `model.js` inside `api/project`, `api/resource` and `api/task` ---
 5. `router.js` inside `api/project`, `api/resource` and `api/task` ---
-6. migration file(s)
-7. seed file(s) **optional**
+6. migration file(s) ---done
+7. seed file(s) **optional** ---done
 
 ### Required Dependencies
 
