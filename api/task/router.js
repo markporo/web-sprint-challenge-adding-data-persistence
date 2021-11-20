@@ -13,20 +13,20 @@ const tasksModel = require('./model')
 //ENDPOINTS
 //GET
 router.get('/', (req, res) => {
-    // tasksModel
-    //     .gettasks()
-    //     .then(tasks => {
-    //         res.status(200).json(tasks)
-    //     })
-    //     .catch(() => {
-    //         res.status(500).json({ message: "The tasks could not be retrieved by Database." })
-    //     })
+    tasksModel
+        .getTasks()
+        .then(tasks => {
+            res.status(200).json(tasks)
+        })
+        .catch(() => {
+            res.status(500).json({ message: "The tasks could not be retrieved by Database." })
+        })
 })
 
 //POST
 router.post('/', (req, res) => {
     // tasksModel
-    //     .create(
+    //     .addTask(
     //         {
 
     //         }

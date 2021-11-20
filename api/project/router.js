@@ -26,6 +26,7 @@ router.get('/', (req, res) => {
     projectsModel
         .getProjects()
         .then(projects => {
+            console.log(projects, 'projects')
             res.status(200).json(projects)
         })
         .catch(() => {

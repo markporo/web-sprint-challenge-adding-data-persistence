@@ -23,9 +23,9 @@ server.use(helmet());
 server.use(cors());
 
 //ROUTERS
-server.use('/api/project', projectRouter)
-server.use('/api/resource', resourceRouter)
-server.use('/api/task', taskRouter)
+server.use('/api/projects', projectRouter)
+server.use('/api/resources', resourceRouter)
+server.use('/api/tasks', taskRouter)
 
 //HOME PAGE_ISH
 server.get('/', (req, res) => {

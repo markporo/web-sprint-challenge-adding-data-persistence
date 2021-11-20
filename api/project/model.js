@@ -1,14 +1,13 @@
 // build your `Project` model here
 
 // CONFIGURE DB
-//const db = require('../../data/dbConfig')
+const db = require('../../data/dbConfig')
 
 
 
-//getProjects access FUnction
+//getProjects access Function
 function getProjects() {
-    console.log('Projects GOTTEN')
-    return ['project1, project2']
+    return Promise.resolve('awesome projects')
 }
 
 

@@ -13,14 +13,14 @@ const resourcesModel = require('./model')
 //ENDPOINTS
 //GET
 router.get('/', (req, res) => {
-    // resourceModel
-    //     .getResources()
-    //     .then(resources => {
-    //         res.status(200).json(resources)
-    //     })
-    //     .catch(() => {
-    //         res.status(500).json({ message: "The resources could not be retrieved by Database." })
-    //     })
+    resourcesModel
+        .getResources()
+        .then(resources => {
+            res.status(200).json(resources)
+        })
+        .catch(() => {
+            res.status(500).json({ message: "The resources could not be retrieved by Database." })
+        })
 })
 
 //POST
