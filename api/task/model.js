@@ -16,14 +16,21 @@ async function getTasks() {
 
 // get task by id
 async function getTaskById(id) {
-    const [foundTask] = await db('tasks as t')
+    const foundTask = await db('tasks as t')
         .leftJoin('projects as p', 't.project_id', '=', 'p.project_id')
         .where({ "task_id": id })
         .select('t.task_id', 't.task_description', 't.task_notes', 't.task_completed', 'p.project_name', 'p.project_description') //'t.project_id'
 
+    const newTask = {
+        "task_id": foundTask[0].task_id,
+        "task_description": foundTask[0].task_description,
+        "task_notes": foundTask[0].task_notes,
+        "task_completed": !!foundTask[0].task_completed,
+        "project_name": foundTask[0].project_name,
+        "project_description": foundTask[0].project_description
+    }
 
-    return { ...foundTask, task_completed: !!foundTask.task_completed }
-
+    return newTask
 }
 
 

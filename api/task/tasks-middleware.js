@@ -8,15 +8,16 @@ async function taskBodyCheck(req, res, next) {
 
     console.log(projectId, 'projectID')
     console.log(req.body.project_id, 'req.body.project_id')
+    console.log(!req.body.project_id, "!req.body.project_id should be false")
 
     // error handling 
     //if (!fullSchemes.length) return null
 
     if (!req.body.task_description) {
         res.status(400).json({ message: "missing task_description" })
-        // } else if (req.body.project_id > 0 || req.body.project_id > (projects.length - 1) || req.body.project_id === '' || req.body.project_id === null || !req.body.project_id) {
-        //     res.status(400).json({ message: 'missing project_id' })
-    } else if (!projectId || typeof req.body.project_id !== 'number' || projectId === null) {
+    } else if (!req.body.project_id === true || typeof req.body.project_id !== 'number' || req.body.project_id === '' || req.body.project_id === null) {
+        res.status(400).json({ message: 'missing project_id' })
+    } else if (!projectId || projectId === null) {
         res.status(400).json({ message: "invalid or missing project_id" })
     } else {
         next()

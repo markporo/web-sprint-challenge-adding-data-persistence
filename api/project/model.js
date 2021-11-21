@@ -13,6 +13,15 @@ function getProjects() {
 async function getProjectByID(id) {
     const foundProject = await db('projects').where({ "project_id": id }).first()
 
+    // const newFoundProject = {
+    //     "project_id": foundProject[0].project_id,
+    //     "project_name": foundProject[0].project_name,
+    //     "project_description": foundProject[0].project_description,
+    //     "project_completed": !!foundProject[0].project_completed
+    // }
+    console.log(foundProject, 'foundproject');
+    // return newFoundProject;
+
     return { ...foundProject, project_completed: !!foundProject.project_completed }
 }
 
