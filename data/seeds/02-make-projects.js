@@ -1,8 +1,8 @@
 const projects = [
-    { project_name: 'Lambda Sprint', 'project_description': 'End of Sprint Assignment Due Sunday Night', 'project_completed': 0 },
-    { project_name: 'Pandora Liners', 'project_description': 'Record Commercial Liners for Between Pandora Songs for TLATW', 'project_completed': 0 },
-    { project_name: 'Finish Mastering A New Light', 'project_description': null, 'project_completed': 0 },
-    { project_name: 'Get First Mix of Love and Lore', 'project_description': 'Open Logic file and access what needs done then get to work', 'project_completed': 0 },
+    { project_name: 'Lambda Sprint', project_description: 'End of Sprint Assignment Due Sunday Night', project_completed: 0 },
+    { project_name: 'Pandora Liners', project_description: 'Record Commercial Liners for Between Pandora Songs for TLATW', project_completed: 0 },
+    { project_name: 'Finish Mastering A New Light', project_description: null, project_completed: 0 },
+    { project_name: 'Get First Mix of Love and Lore', project_description: 'Open Logic file and access what needs done then get to work', project_completed: 0 },
 ]
 
 exports.projects = projects

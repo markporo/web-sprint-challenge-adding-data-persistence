@@ -3,12 +3,14 @@ exports.up = async function (knex) {
     await knex.schema
         .createTable('projects', table => {
             table.increments('project_id')
-            table.string('project_name', 256)
+            table.text('project_name', 256)
                 .notNullable()
                 .unique()
             table.text('project_description', 1024)
             table.integer('project_completed')
                 .notNullable()
+                .defaultTo('0')
+            //table.boolean('project_completed').notNullable().defaultTo(false);
         })
         .createTable('resources', table => {
             table.increments('resource_id')
@@ -22,7 +24,7 @@ exports.up = async function (knex) {
             table.text('task_description', 1024)
             table.text('task_notes', 1024)
             table.integer('task_completed')
-                .notNullable()
+            //.notNullable()
             // // foreign key that points to projects
             table.integer('project_id') // forces integer to be positive
                 .unsigned()
