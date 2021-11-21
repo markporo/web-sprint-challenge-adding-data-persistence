@@ -10,16 +10,23 @@ function getResources() {
     return db('resources');
 }
 
+async function getResourceById(id) {
+    const foundResource = await db('resources').where({ "resource_id": id }).first()
+
+    return foundResource;
+}
+
 
 
 //postResources access Function
-function addResource() {
-
+async function addResource(newResource) {
+    const [newResourceId] = await db('resources').insert(newResource)
+    return getResourceById(newResourceId)
 }
 
 
 
 
 module.exports = {
-    getResources, addResource
+    getResources, addResource, getResourceById
 }
